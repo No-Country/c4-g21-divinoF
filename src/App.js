@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          diVino-Front
+          diVino-Front. La mejor app de vinos
         </p>
         <Button variant="primary">Soy un Botón</Button>{' '}
       </header>
