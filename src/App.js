@@ -1,19 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
-import { Button } from 'react-bootstrap';
+import NavBar from "./components/NavBar";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          diVino-Front. La mejor app de vinos
-        </p>
-        <Button variant="primary">Soy un Botón</Button>{' '}
-      </header>
+      <p>diVino Front</p>
+      <h1>Acá renderizamos la NavBar</h1>
+      <NavBar />
     </div>
   );
-}
+};
 
 export default App;
