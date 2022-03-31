@@ -1,11 +1,12 @@
+import "./styles/styles.css";
 import NavBar from "./components/NavBar";
+import Login from "./components/Login";
 
 const App = () => {
   return (
     <div className="App">
-      <p>diVino Front</p>
-      <h1>Acá renderizamos la NavBar</h1>
       <NavBar />
+      <Login />
     </div>
   );
 };
