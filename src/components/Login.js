@@ -4,7 +4,7 @@ const Login = () => {
             <div className="cont container d-flex flex-column align-items-center justify-content-evenly col-9 col-s-6 col-md-4">
                 <h1 className="fs-3">Log In</h1>
                 <div className="d-flex flex-column">
-                    <div className="d-flex">
+                    <div className="inputs d-flex">
                         <div>I</div>
                         <input type="email" placeholder="Correo electrónico"></input>
                     </div>
@@ -14,7 +14,7 @@ const Login = () => {
                         <div>V</div>
                     </div>
                 </div>
-                <button className="btn btn-primary">Sign in</button>
+                <button className="btn">Sign in</button>
             </div>
         </div>
     );
