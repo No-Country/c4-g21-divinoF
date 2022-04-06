@@ -1,19 +1,18 @@
 import "./styles/styles.css";
-import NavBar from "./components/NavBar";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import { Route, Routes } from "react-router-dom";
-import LoaderSpinner from "./components/LoaderSpinner";
+import PersistentDrawerLeft from "./components/PersistentDrawerLeft";
 
 const App = () => {
     return (
         <div className="App">
-            <NavBar />
+            <PersistentDrawerLeft />
             <Routes>
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
             </Routes>
-           <LoaderSpinner /> 
+          
         </div>
         
     );
