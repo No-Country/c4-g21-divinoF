@@ -9,42 +9,42 @@ const LoaderSpinner = () => {
   return (
   
         <>
-        <Spinner animation="border" role="status" style={{ color: "purple" }} >
+        <Spinner animation="grow" role="status" style={{ color: "purple" }} >
           <span className="visually-hidden">Loading...</span>
         </Spinner>
-        <Spinner animation="border" role="status" style={{ color: "purple" }} >
+        <Spinner animation="grow" role="status" style={{ color: "purple" }} >
           <span className="visually-hidden">Loading...</span>
         </Spinner>
-        <Spinner animation="border" role="status" style={{ color: "purple" }} >
+        <Spinner animation="grow" role="status" style={{ color: "purple" }} >
           <span className="visually-hidden">Loading...</span>
         </Spinner>
-        <Spinner animation="border" role="status" style={{ color: "purple" }} >
+        <Spinner animation="grow" role="status" style={{ color: "purple" }} >
           <span className="visually-hidden">Loading...</span>
         </Spinner>
-        <Spinner animation="border" role="status" style={{ color: "purple" }} >
-          <span className="visually-hidden">Loading...</span>
-        </Spinner>
-        <br/>
-        <Spinner animation="border" role="status" style={{ color: "white" }}>
-          <span className="visually-hidden">Loading...</span>
-        </Spinner>
-        <Spinner animation="border" role="status" style={{ color: "purple" }} >
-          <span className="visually-hidden">Loading...</span>
-        </Spinner>
-        <Spinner animation="border" role="status" style={{ color: "purple" }} >
-          <span className="visually-hidden">Loading...</span>
-        </Spinner>
-        <Spinner animation="border" role="status" style={{ color: "purple" }} >
+        <Spinner animation="grow" role="status" style={{ color: "purple" }} >
           <span className="visually-hidden">Loading...</span>
         </Spinner>
         <br/>
-        <Spinner animation="border" role="status" style={{ color: "white" }}>
+        <Spinner animation="grow" role="status" style={{ color: "white" }}>
           <span className="visually-hidden">Loading...</span>
         </Spinner>
-        <Spinner animation="border" role="status" style={{ color: "white" }}>
+        <Spinner animation="grow" role="status" style={{ color: "purple" }} >
           <span className="visually-hidden">Loading...</span>
         </Spinner>
-        <Spinner animation="border" role="status" style={{ color: "purple" }} >
+        <Spinner animation="grow" role="status" style={{ color: "purple" }} >
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+        <Spinner animation="grow" role="status" style={{ color: "purple" }} >
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+        <br/>
+        <Spinner animation="grow" role="status" style={{ color: "white" }}>
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+        <Spinner animation="grow" role="status" style={{ color: "white" }}>
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+        <Spinner animation="grow" role="status" style={{ color: "purple" }} >
           <span className="visually-hidden">Loading...</span>
         </Spinner>
         
