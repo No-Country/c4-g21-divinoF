@@ -17,46 +17,15 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
-
 import HomeIcon from "@mui/icons-material/Home";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import CircleNotificationsIcon from "@mui/icons-material/CircleNotifications";
 import DataSaverOffIcon from "@mui/icons-material/DataSaverOff";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import image from "../assets/divino-logo.png";
-import vinedo from "../assets/viñedo-1.png";
-import wineImage1 from "../assets/WineImage.png";
-import wineImage2 from "../assets/image-12.png";
-import Bodega1 from "../assets/image-5.png";
-import Bodega2 from "../assets/image-7.png";
-import IconPatrocinio1 from "../assets/image-1.png";
-import IconPatrocinio2 from "../assets/image-2.png";
-import IconPatrocinio3 from "../assets/image-3.png";
-import IconPatrocinio4 from "../assets/image-4.png";
-import IconPatrocinio9 from "../assets/image-9.png";
-import IconPatrocinio10 from "../assets/image-10.png";
-import IconPatrocinio11 from "../assets/image-11.png";
+import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
-
-const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
-    ({ theme, open }) => ({
-        flexGrow: 1,
-        padding: theme.spacing(3),
-        transition: theme.transitions.create("margin", {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
-        }),
-        marginLeft: `-${drawerWidth}px`,
-        ...(open && {
-            transition: theme.transitions.create("margin", {
-                easing: theme.transitions.easing.easeOut,
-                duration: theme.transitions.duration.enteringScreen,
-            }),
-            marginLeft: 0,
-        }),
-    })
-);
 
 const AppBar = styled(MuiAppBar, {
     shouldForwardProp: (prop) => prop !== "open",
@@ -74,7 +43,6 @@ const AppBar = styled(MuiAppBar, {
         }),
     }),
 }));
-
 const DrawerHeader = styled("div")(({ theme }) => ({
     display: "flex",
     alignItems: "center",
@@ -100,7 +68,7 @@ export default function PersistentDrawerLeft() {
         <Box sx={{ display: "flex" }}>
             <CssBaseline />
             <AppBar className="drawer" position="fixed" open={open}>
-                <Toolbar>
+                <Toolbar className="DrawerSyles">
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
@@ -111,9 +79,17 @@ export default function PersistentDrawerLeft() {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        <img src={image} alt="icon" />
+                        <Link to="/">
+                            <img src={image} alt="icon" />
+                        </Link>
                     </Typography>
                 </Toolbar>
+                <Link to="/register">
+                    <button className="btn btn-primary">Registrame!</button>
+                </Link>
+                <Link to="/login">
+                    <button className="btn btn-primary">Logueame!</button>
+                </Link>
             </AppBar>
             <Drawer
                 sx={{
@@ -149,14 +125,8 @@ export default function PersistentDrawerLeft() {
                         { name: "Analytics", icon: <DataSaverOffIcon /> },
                         { name: "Inventory", icon: <InventoryIcon /> },
                     ].map((item, index) => (
-                        <ListItem button key={item.name}>
-                            <ListItemIcon>
-                                {/*  { [<HomeIcon/>,,,,
-                
-              ]
-              } */}
-                                {item.icon}
-                            </ListItemIcon>
+                        <ListItem button key={index}>
+                            <ListItemIcon>{item.icon}</ListItemIcon>
                             <ListItemText primary={item.name} />
                         </ListItem>
                     ))}
@@ -173,77 +143,6 @@ export default function PersistentDrawerLeft() {
                     ))}
                 </List>
             </Drawer>
-            <Main open={open}>
-                <DrawerHeader />
-                <div>
-                    <Typography paragraph variant="h3">
-                        Próximos eventos
-                        <br />
-                    </Typography>
-                    <Typography paragraph>
-                        <img src={vinedo} alt="icon" />
-                        Viñendo Nébula
-                    </Typography>
-                </div>
-                <div>
-                    <Typography paragraph variant="h4">
-                        Vino destacado de la semana
-                        <br />
-                        <Typography paragraph variant="h6">
-                            Paua Bau
-                            <br />
-                            Rico aroma, con impronta y de final amable. En nariz
-                            se destaca mucha fruta fresca roja, de intensidad
-                            media en boca lo que lo convierte en un tinto fácil
-                            de tomarlo.
-                        </Typography>
-                        <img src={wineImage1} alt="icon" />
-                    </Typography>
-                </div>
-                <div>
-                    <Typography variant="h4">Bodegas destacadas</Typography>
-                    <div>
-                        <Typography>
-                            Desde sus inicios, la bodega persigue un camino
-                            fuertemente marcado por su obsesión y respeto por la
-                            naturaleza. Los pilares fundamentales de la
-                            producción en Achaval-Ferrer, tienen foco en la
-                            mínima intervención necesaria entre la tierra y la
-                            copa.
-                        </Typography>
-                        <img src={Bodega1} alt="icon" />
-                    </div>
-                    <div>
-                        <Typography>
-                            Nuestros vinos tienen un delicado equilibrio entre
-                            azúcar y acidez. Las uvas blancas nos regalan vinos
-                            etéreos y aromáticos, mientras los tintos son
-                            robustos y expresivos. Todos revelan un estilo
-                            definido y equilibrado entre el clasismo y la
-                            modernidad. Cada uno de nuestros vinos contiene el
-                            espíritu y la esencia de la tierra patagónica.
-                        </Typography>
-                        <img src={Bodega2} alt="icon" />
-                    </div>
-                </div>
-
-                <div>
-                    <img src={wineImage1} alt="icon" />
-                    <img src={wineImage2} alt="icon" />
-                </div>
-
-                <div>
-                    <Typography variant="h4">Bodegas partner</Typography>
-                    <img src={IconPatrocinio1} alt="icon" />
-                    <img src={IconPatrocinio2} alt="icon" />
-                    <img src={IconPatrocinio3} alt="icon" />
-                    <img src={IconPatrocinio4} alt="icon" />
-
-                    <img src={IconPatrocinio9} alt="icon" />
-                    <img src={IconPatrocinio10} alt="icon" />
-                    <img src={IconPatrocinio11} alt="icon" />
-                </div>
-            </Main>
         </Box>
     );
 }
