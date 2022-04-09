@@ -98,144 +98,152 @@ export default function PersistentDrawerLeft() {
   };
 
   return (
-    <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-      <AppBar className="drawer" position="fixed" open={open}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{ mr: 2, ...(open && { display: 'none' }) }}
+      <Box sx={{ display: "flex" }}>
+          <CssBaseline />
+          <AppBar className="drawer" position="fixed" open={open}>
+              <Toolbar>
+                  <IconButton
+                      color="inherit"
+                      aria-label="open drawer"
+                      onClick={handleDrawerOpen}
+                      edge="start"
+                      sx={{ mr: 2, ...(open && { display: "none" }) }}
+                  >
+                      <MenuIcon />
+                  </IconButton>
+                  <Typography variant="h6" noWrap component="div">
+                      <img src={image} alt="icon" />
+                  </Typography>
+              </Toolbar>
+          </AppBar>
+          <Drawer
+              sx={{
+                  width: drawerWidth,
+                  flexShrink: 0,
+                  "& .MuiDrawer-paper": {
+                      width: drawerWidth,
+                      boxSizing: "border-box",
+                  },
+              }}
+              variant="persistent"
+              anchor="left"
+              open={open}
           >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
-          <img src={image} alt='icon'/>
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Drawer 
-        sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          '& .MuiDrawer-paper': {
-            width: drawerWidth,
-            boxSizing: 'border-box',
-          },
-        }}
-        variant="persistent"
-        anchor="left"
-        open={open}
-      >
-        <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-          </IconButton>
-        </DrawerHeader>
-        <Divider />
-        <List>
-          
-          {[{name:'Dasboard',icon:<HomeIcon/>}, {name:'Revenue' , icon:<BarChartIcon/>} ,{name:'Notifications' , icon:<CircleNotificationsIcon/>} ,{name:'Analytics' , icon:<DataSaverOffIcon/>} ,{name:'Inventory' , icon:<InventoryIcon/>}].map((item, index) => (
-            <ListItem button key={item.name}>
-              <ListItemIcon>
-               {/*  { [<HomeIcon/>,,,,
+              <DrawerHeader>
+                  <IconButton onClick={handleDrawerClose}>
+                      {theme.direction === "ltr" ? (
+                          <ChevronLeftIcon />
+                      ) : (
+                          <ChevronRightIcon />
+                      )}
+                  </IconButton>
+              </DrawerHeader>
+              <Divider />
+              <List>
+                  {[
+                      { name: "Dasboard", icon: <HomeIcon /> },
+                      { name: "Revenue", icon: <BarChartIcon /> },
+                      {
+                          name: "Notifications",
+                          icon: <CircleNotificationsIcon />,
+                      },
+                      { name: "Analytics", icon: <DataSaverOffIcon /> },
+                      { name: "Inventory", icon: <InventoryIcon /> },
+                  ].map((item, index) => (
+                      <ListItem button key={item.name}>
+                          <ListItemIcon>
+                              {/*  { [<HomeIcon/>,,,,
                 
               ]
               } */}
-                {item.icon}
-                
-               
-              </ListItemIcon>
-              <ListItemText primary={item.name} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {['Logout', 'Darkmode'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-      </Drawer>
-      <Main open={open}>
-        <DrawerHeader />
-        <div> 
-        <Typography paragraph variant='h3'>
-          Próximos eventos
-          <br/>
-          
-        </Typography>
-        <Typography paragraph>
-          <img src={vinedo} alt='icon'/>
-          Viñendo Nébula
-        </Typography>
-        </div>
-        <div> 
-        <Typography paragraph variant='h4'>
-          Vino destacado de la semana
-          <br/> 
-              <Typography paragraph variant="h6">
-          Paua Bau
-          <br/>
-          Rico aroma, con impronta y de final amable. En nariz se destaca mucha fruta fresca roja, de intensidad media en boca lo que lo convierte en un tinto fácil de tomarlo.
-              </Typography>
-                   
-             <img src={wineImage1} alt='icon'/>
-          
-            </Typography>
-        </div>
-          <div>  
-            <Typography variant="h4">
-              Bodegas destacadas
-            </Typography>
-           <div>
-            <Typography>
-              Desde sus inicios, la bodega persigue un camino fuertemente marcado por su obsesión y respeto por la naturaleza. Los pilares fundamentales de la producción en Achaval-Ferrer, tienen foco en la mínima intervención necesaria entre la tierra y la copa.
-              
-              </Typography>
-              <img src={Bodega1} alt='icon'/>
-            </div>
-            <div> 
-            <Typography>
-            Nuestros vinos tienen un delicado equilibrio entre azúcar y acidez. Las uvas blancas nos regalan vinos etéreos y aromáticos, mientras los tintos son robustos y expresivos. Todos revelan un estilo definido y equilibrado entre el clasismo y la modernidad. Cada uno de nuestros vinos contiene el espíritu y la esencia de la tierra patagónica.
-            </Typography>
-            <img src={Bodega2} alt='icon'/>
-            </div>
-        </div>
-        
-        
-        <div> 
-          <img src={wineImage1} alt='icon'/>
-          <img src={wineImage2} alt='icon'/>
-        </div>
-        
-        
-        <div>
-        <Typography variant='h4'>
-              Bodegas partner
-            </Typography>
-          <img src={IconPatrocinio1} alt='icon'/>
-        <img src={IconPatrocinio2} alt='icon'/>
-        <img src={IconPatrocinio3} alt='icon'/>
-        <img src={IconPatrocinio4} alt='icon'/>
-        
-        <img src={IconPatrocinio9} alt='icon'/>
-        <img src={IconPatrocinio10} alt='icon'/>
-        <img src={IconPatrocinio11} alt='icon'/>
-        </div>
-        
-        
-             
- 
+                              {item.icon}
+                          </ListItemIcon>
+                          <ListItemText primary={item.name} />
+                      </ListItem>
+                  ))}
+              </List>
+              <Divider />
+              <List>
+                  {["Logout", "Darkmode"].map((text, index) => (
+                      <ListItem button key={text}>
+                          <ListItemIcon>
+                              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                          </ListItemIcon>
+                          <ListItemText primary={text} />
+                      </ListItem>
+                  ))}
+              </List>
+          </Drawer>
+          <Main open={open}>
+              <DrawerHeader />
+              <div>
+                  <Typography paragraph variant="h3">
+                      Próximos eventos
+                      <br />
+                  </Typography>
+                  <Typography paragraph>
+                      <img src={vinedo} alt="icon" />
+                      Viñendo Nébula
+                  </Typography>
+              </div>
+              <div>
+                  <Typography paragraph variant="h4">
+                      Vino destacado de la semana
+                      <br />
+                      <Typography paragraph variant="h6">
+                          Paua Bau
+                          <br />
+                          Rico aroma, con impronta y de final amable. En nariz
+                          se destaca mucha fruta fresca roja, de intensidad
+                          media en boca lo que lo convierte en un tinto fácil de
+                          tomarlo.
+                      </Typography>
+                      <img src={wineImage1} alt="icon" />
+                  </Typography>
+              </div>
+              <div>
+                  <Typography variant="h4">Bodegas destacadas</Typography>
+                  <div>
+                      <Typography>
+                          Desde sus inicios, la bodega persigue un camino
+                          fuertemente marcado por su obsesión y respeto por la
+                          naturaleza. Los pilares fundamentales de la producción
+                          en Achaval-Ferrer, tienen foco en la mínima
+                          intervención necesaria entre la tierra y la copa.
+                      </Typography>
+                      <img src={Bodega1} alt="icon" />
+                  </div>
+                  <div>
+                      <Typography>
+                          Nuestros vinos tienen un delicado equilibrio entre
+                          azúcar y acidez. Las uvas blancas nos regalan vinos
+                          etéreos y aromáticos, mientras los tintos son robustos
+                          y expresivos. Todos revelan un estilo definido y
+                          equilibrado entre el clasismo y la modernidad. Cada
+                          uno de nuestros vinos contiene el espíritu y la
+                          esencia de la tierra patagónica.
+                      </Typography>
+                      <img src={Bodega2} alt="icon" />
+                  </div>
+              </div>
 
-      </Main>
-    </Box>
+              <div>
+                  <img src={wineImage1} alt="icon" />
+                  <img src={wineImage2} alt="icon" />
+              </div>
+
+              <div>
+                  <Typography variant="h4">Bodegas partner</Typography>
+                  <img src={IconPatrocinio1} alt="icon" />
+                  <img src={IconPatrocinio2} alt="icon" />
+                  <img src={IconPatrocinio3} alt="icon" />
+                  <img src={IconPatrocinio4} alt="icon" />
+
+                  <img src={IconPatrocinio9} alt="icon" />
+                  <img src={IconPatrocinio10} alt="icon" />
+                  <img src={IconPatrocinio11} alt="icon" />
+              </div>
+          </Main>
+      </Box>
   );
 }
