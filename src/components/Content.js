@@ -26,9 +26,10 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 const Content = () => {
     return (
-        <div>
+        <div className="container" >
             <DrawerHeader />
             <div>
+                            
                 <Typography paragraph variant="h3">
                     Próximos eventos
                 </Typography>
@@ -53,7 +54,7 @@ const Content = () => {
             </div>
             <div>
                 <Typography variant="h4">Bodegas destacadas</Typography>
-                <div>
+                
                     <Typography>
                         Desde sus inicios, la bodega persigue un camino
                         fuertemente marcado por su obsesión y respeto por la
@@ -62,8 +63,8 @@ const Content = () => {
                         necesaria entre la tierra y la copa.
                     </Typography>
                     <img src={Bodega1} alt="icon" />
-                </div>
-                <div>
+                
+                
                     <Typography>
                         Nuestros vinos tienen un delicado equilibrio entre
                         azúcar y acidez. Las uvas blancas nos regalan vinos
@@ -74,7 +75,7 @@ const Content = () => {
                         la tierra patagónica.
                     </Typography>
                     <img src={Bodega2} alt="icon" />
-                </div>
+                
             </div>
 
             <div>
