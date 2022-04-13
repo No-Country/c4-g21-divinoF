@@ -28,13 +28,13 @@ const Content = () => {
     return (
         <div className="container" >
             <DrawerHeader />
-            <div>
+            <div className="events">
                             
-                <Typography paragraph variant="h3">
+                <Typography paragraph variant="h3" className="Title-landing" >
                     Próximos eventos
                 </Typography>
+                <img src={vinedo} alt="icon" />
                 <Typography paragraph>
-                    <img src={vinedo} alt="icon" />
                     Viñendo Nébula
                 </Typography>
             </div>
@@ -52,17 +52,20 @@ const Content = () => {
                     <img src={wineImage1} alt="icon" />
                 </Typography>
             </div>
-            <div>
-                <Typography variant="h4">Bodegas destacadas</Typography>
+            <div className="store">
+                    <Typography variant="h4" className="Title-landing">
+                        Bodegas destacadas
+                    </Typography>
                 
                     <Typography>
                         Desde sus inicios, la bodega persigue un camino
                         fuertemente marcado por su obsesión y respeto por la
                         naturaleza. Los pilares fundamentales de la producción
                         en Achaval-Ferrer, tienen foco en la mínima intervención
-                        necesaria entre la tierra y la copa.
+                        necesaria entre la tierra y la copa. 
+                        <img src={Bodega1} alt="icon" />
                     </Typography>
-                    <img src={Bodega1} alt="icon" />
+                   
                 
                 
                     <Typography>
@@ -73,8 +76,9 @@ const Content = () => {
                         equilibrado entre el clasismo y la modernidad. Cada uno
                         de nuestros vinos contiene el espíritu y la esencia de
                         la tierra patagónica.
+                        <img src={Bodega2} alt="icon" />
                     </Typography>
-                    <img src={Bodega2} alt="icon" />
+                    
                 
             </div>
 
@@ -84,7 +88,9 @@ const Content = () => {
             </div>
 
             <div>
-                <Typography variant="h4">Bodegas partner</Typography>
+                <Typography variant="h4" className="Title-landing">
+                    Bodegas partner
+                </Typography>
                 <img src={IconPatrocinio1} alt="icon" />
                 <img src={IconPatrocinio2} alt="icon" />
                 <img src={IconPatrocinio3} alt="icon" />

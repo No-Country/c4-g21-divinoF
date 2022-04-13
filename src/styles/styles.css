@@ -47,16 +47,46 @@ input {
 div.container{
     margin: 0;
     padding: 0;
-    max-width: 100%;
-    min-height: 100%;
+    max-width: 100vw;
+    min-height: 100vh;
+    
 }
 
 div.container div:nth-child(odd) {
      background: rgba(158, 163, 169, 0.33) !important; 
      
-     margin: 0px 0 ;
+     margin: 0  ;
 }
 div.container div:nth-child(even) {
     background: #fff !important; 
    
 }
+
+div.events, div.store{
+    display: flex;
+    flex-direction: column;
+}
+
+div.events img{
+    max-width: 80vw;
+    min-height: 80vh;
+    margin: auto;
+}
+
+/* feature cellar */
+.Title-landing{
+    align-self: center;
+    margin-top: 15px !important;
+}
+
+div.store p{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+div.store img{
+    max-width: 60vw;
+    min-height: 60vh;
+    
+}
+
