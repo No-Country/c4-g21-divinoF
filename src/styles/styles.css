@@ -44,20 +44,19 @@ input {
     justify-content: space-between;
 }
 
-div.container{
-    margin: 0;
+div.contenedor{
+    margin-top:10vh ;
     padding: 0;
-    max-width: 100vw;
-    min-height: 100vh;
+    
     
 }
 
-div.container div:nth-child(odd) {
+div.contenedor div:nth-child(even) {
      background: rgba(158, 163, 169, 0.33) !important; 
      
      margin: 0  ;
 }
-div.container div:nth-child(even) {
+div.contenedor div:nth-child(odd) {
     background: #fff !important; 
    
 }

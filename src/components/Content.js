@@ -26,8 +26,9 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 const Content = () => {
     return (
-        <div className="container" >
-            <DrawerHeader />
+       
+        <div className="contenedor" >
+            {/* <DrawerHeader /> */}
             <div className="events">
                             
                 <Typography paragraph variant="h3" className="Title-landing" >
