@@ -78,18 +78,19 @@ export default function PersistentDrawerLeft() {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap component="div">
+                    <Link to="/register">
+                        <button className="btn btn-primary">Registrame!</button>
+                    </Link>
+                    <Link to="/login">
+                        <button className="btn btn-primary">Logueame!</button>
+                    </Link>     
+                    <Typography variant="h6" noWrap component="div" >
                         <Link to="/">
                             <img src={image} alt="icon" />
                         </Link>
                     </Typography>
                 </Toolbar>
-                <Link to="/register">
-                    <button className="btn btn-primary">Registrame!</button>
-                </Link>
-                <Link to="/login">
-                    <button className="btn btn-primary">Logueame!</button>
-                </Link>
+                
             </AppBar>
             <Drawer
                 sx={{
@@ -142,6 +143,8 @@ export default function PersistentDrawerLeft() {
                         </ListItem>
                     ))}
                 </List>
+                     
+
             </Drawer>
         </Box>
     );
