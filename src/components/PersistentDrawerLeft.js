@@ -9,6 +9,8 @@ import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
+import Stack from "@mui/material/Stack";
+import Button from '@mui/material/Button';
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
@@ -78,12 +80,14 @@ export default function PersistentDrawerLeft() {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Link to="/register">
-                        <button className="btn btn-primary">Registrame!</button>
-                    </Link>
-                    <Link to="/login">
-                        <button className="btn btn-primary">Logueame!</button>
-                    </Link>     
+                    <Stack spacing={2} direction="row" className="drawer-btns">
+                        <Link to="/register">
+                            <Button variant="outlined" className="register-btn">Registrarme</Button>
+                        </Link>
+                        <Link to="/login">
+                            <Button variant ="contained" className="login-btn">Login</Button>
+                        </Link>
+                    </Stack>     
                     <Typography variant="h6" noWrap component="div" >
                         <Link to="/">
                             <img src={image} alt="icon" />
