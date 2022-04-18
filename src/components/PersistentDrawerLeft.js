@@ -9,6 +9,8 @@ import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
+import Stack from "@mui/material/Stack";
+import Button from '@mui/material/Button';
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
@@ -23,6 +25,8 @@ import CircleNotificationsIcon from "@mui/icons-material/CircleNotifications";
 import DataSaverOffIcon from "@mui/icons-material/DataSaverOff";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import image from "../assets/divino-logo.png";
+import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
+import LoginIcon from '@mui/icons-material/Login';
 import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
@@ -68,7 +72,7 @@ export default function PersistentDrawerLeft() {
         <Box sx={{ display: "flex" }}>
             <CssBaseline />
             <AppBar className="drawer" position="fixed" open={open}>
-                <Toolbar className="DrawerSyles">
+                <Toolbar className="DrawerStyles">
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
@@ -78,13 +82,15 @@ export default function PersistentDrawerLeft() {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Link to="/register">
-                        <button className="btn btn-primary">Registrame!</button>
-                    </Link>
-                    <Link to="/login">
-                        <button className="btn btn-primary">Logueame!</button>
-                    </Link>     
-                    <Typography variant="h6" noWrap component="div" >
+                    <Stack spacing={2} direction="row" className="drawer-btns">
+                        <Link to="/register">
+                            <Button variant="outlined" className="register-btn" startIcon={<AppRegistrationIcon/>}>Registrarme</Button>
+                        </Link>
+                        <Link to="/login">
+                            <Button variant ="contained" className="login-btn" startIcon={<LoginIcon />}>Login</Button>
+                        </Link>
+                    </Stack>     
+                    <Typography variant="h6" noWrap component="div" className="divino-logo" >
                         <Link to="/">
                             <img src={image} alt="icon" />
                         </Link>

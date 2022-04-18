@@ -26,61 +26,65 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 const Content = () => {
     return (
-       
-        <div className="contenedor" >
+        <div className="contenedor">
             {/* <DrawerHeader /> */}
             <div className="events">
-                            
-                <Typography paragraph variant="h3" className="Title-landing" >
+                <Typography paragraph variant="h4" className="Title-landing h4">
                     Próximos eventos
                 </Typography>
                 <img src={vinedo} alt="icon" />
-                <Typography paragraph>
-                    Viñendo Nébula
-                </Typography>
+                <div className="event-info">
+                    <Typography
+                        paragraph
+                        variant="subtitle1"
+                        className="viñedo"
+                    >
+                        Viñedo Nébula
+                    </Typography>
+                    <Typography
+                        paragraph
+                        variant="subtitle2"
+                        className="date-event"
+                    >
+                        27/04/22
+                    </Typography>
+                </div>
             </div>
             <div>
-                <Typography paragraph variant="h4">
+                <Typography paragraph variant="h4" className="h4">
                     Vino destacado de la semana
-                    {/* <Typography paragraph variant="h5"> */}
-                    <h5>
-                        Paua Bau Rico aroma, con impronta y de final amable. En
-                        nariz se destaca mucha fruta fresca roja, de intensidad
-                        media en boca lo que lo convierte en un tinto fácil de
-                        tomarlo.
-                    </h5>
-                    {/* </Typography> */}
-                    <img src={wineImage1} alt="icon" />
+                </Typography>
+                <Typography>
+                    Paua Bau Rico aroma, con impronta y de final amable. En
+                    nariz se destaca mucha fruta fresca roja, de intensidad
+                    media en boca lo que lo convierte en un tinto fácil de
+                    tomarlo.
+                    <img src={wineImage1} alt="icon" className="wineImage1" />
                 </Typography>
             </div>
             <div className="store">
-                    <Typography variant="h4" className="Title-landing">
-                        Bodegas destacadas
-                    </Typography>
-                
-                    <Typography>
-                        Desde sus inicios, la bodega persigue un camino
-                        fuertemente marcado por su obsesión y respeto por la
-                        naturaleza. Los pilares fundamentales de la producción
-                        en Achaval-Ferrer, tienen foco en la mínima intervención
-                        necesaria entre la tierra y la copa. 
-                        <img src={Bodega1} alt="icon" />
-                    </Typography>
-                   
-                
-                
-                    <Typography>
-                        Nuestros vinos tienen un delicado equilibrio entre
-                        azúcar y acidez. Las uvas blancas nos regalan vinos
-                        etéreos y aromáticos, mientras los tintos son robustos y
-                        expresivos. Todos revelan un estilo definido y
-                        equilibrado entre el clasismo y la modernidad. Cada uno
-                        de nuestros vinos contiene el espíritu y la esencia de
-                        la tierra patagónica.
-                        <img src={Bodega2} alt="icon" />
-                    </Typography>
-                    
-                
+                <Typography variant="h4" className="Title-landing">
+                    Bodegas destacadas
+                </Typography>
+
+                <Typography>
+                    Desde sus inicios, la bodega persigue un camino fuertemente
+                    marcado por su obsesión y respeto por la naturaleza. Los
+                    pilares fundamentales de la producción en Achaval-Ferrer,
+                    tienen foco en la mínima intervención necesaria entre la
+                    tierra y la copa.
+                    <img src={Bodega1} alt="icon" />
+                </Typography>
+
+                <Typography>
+                    Nuestros vinos tienen un delicado equilibrio entre azúcar y
+                    acidez. Las uvas blancas nos regalan vinos etéreos y
+                    aromáticos, mientras los tintos son robustos y expresivos.
+                    Todos revelan un estilo definido y equilibrado entre el
+                    clasismo y la modernidad. Cada uno de nuestros vinos
+                    contiene el espíritu y la esencia de la tierra patagónica.
+                    <img src={Bodega2} alt="icon" />
+                </Typography>
             </div>
 
             <div>
