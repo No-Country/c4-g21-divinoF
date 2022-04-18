@@ -25,6 +25,8 @@ import CircleNotificationsIcon from "@mui/icons-material/CircleNotifications";
 import DataSaverOffIcon from "@mui/icons-material/DataSaverOff";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import image from "../assets/divino-logo.png";
+import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
+import LoginIcon from '@mui/icons-material/Login';
 import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
@@ -70,7 +72,7 @@ export default function PersistentDrawerLeft() {
         <Box sx={{ display: "flex" }}>
             <CssBaseline />
             <AppBar className="drawer" position="fixed" open={open}>
-                <Toolbar className="DrawerSyles">
+                <Toolbar className="DrawerStyles">
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
@@ -82,13 +84,13 @@ export default function PersistentDrawerLeft() {
                     </IconButton>
                     <Stack spacing={2} direction="row" className="drawer-btns">
                         <Link to="/register">
-                            <Button variant="outlined" className="register-btn">Registrarme</Button>
+                            <Button variant="outlined" className="register-btn" startIcon={<AppRegistrationIcon/>}>Registrarme</Button>
                         </Link>
                         <Link to="/login">
-                            <Button variant ="contained" className="login-btn">Login</Button>
+                            <Button variant ="contained" className="login-btn" startIcon={<LoginIcon />}>Login</Button>
                         </Link>
                     </Stack>     
-                    <Typography variant="h6" noWrap component="div" >
+                    <Typography variant="h6" noWrap component="div" className="divino-logo" >
                         <Link to="/">
                             <img src={image} alt="icon" />
                         </Link>

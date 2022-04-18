@@ -55,7 +55,9 @@ input {
     color:black !important;
     justify-content: space-between !important;
 }
-.DrawerSyles{
+
+
+.DrawerStyles{
     display: flex;
     justify-content: space-between;
 
