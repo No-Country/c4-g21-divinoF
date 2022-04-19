@@ -11,12 +11,7 @@ import IconPatrocinio9 from "../assets/image-9.png";
 import IconPatrocinio10 from "../assets/image-10.png";
 import IconPatrocinio11 from "../assets/image-11.png";
 import Typography from "@mui/material/Typography";
-
 import { styled, useTheme } from "@mui/material/styles";
-
-import Switch from "@material-ui/core/Switch";
-import { makeStyles } from "@material-ui/core/styles"
-
 
 const drawerWidth = 240;
 
@@ -29,59 +24,15 @@ const DrawerHeader = styled("div")(({ theme }) => ({
     justifyContent: "flex-end",
 }));
 
-const useStyles = makeStyles((theme) => ({
-  
-    // Styling material components
-    root: {
-     
-        backgroundColor: theme.palette.background.default,
-        [theme.breakpoints.down("xs")]: {
-          paddingTop: theme.spacing(2),
-        },
-      },
-  
-    /* LightTheme : {
-        pageBackground: "white",
-        titleColor: "#dc658b",
-        tagLineColor: "black"
-      },
-    DarkTheme : {
-        pageBackground: "#282c36",
-        titleColor: "lightpink",
-        tagLineColor: "lavender"
-      } */
-
-  }));
-
-
-const Content = (
-    {  toggleDark, settoggleDark }
- ) => {
-
-    const handleModeChange = () => {
-        settoggleDark(!toggleDark);
-        console.log(toggleDark)
-      };
-      const classes = useStyles();
-
-
+const Content = () => {
     return (
-        <div className={classes.root}  /* "contenedor" */  >
+        <div className="contenedor">
             {/* <DrawerHeader /> */}
             <div className="events">
                 <Typography paragraph variant="h4" className="Title-landing h4">
                     Próximos eventos
                 </Typography>
                 <img src={vinedo} alt="icon" />
-                
-                <Switch
-                            checked={toggleDark}
-                            onChange={handleModeChange}
-                            name="toggleDark"
-                            color="default"
-                        />
-
-
                 <div className="event-info">
                     <Typography
                         paragraph
