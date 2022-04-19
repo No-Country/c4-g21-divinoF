@@ -16,7 +16,7 @@ import { styled, useTheme } from "@mui/material/styles";
 
 import Switch from "@material-ui/core/Switch";
 import { makeStyles } from "@material-ui/core/styles"
-/* import PersistentDrawerLeft from "./PersistentDrawerLeft"; */
+
 
 const drawerWidth = 240;
 
@@ -29,7 +29,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
     justifyContent: "flex-end",
 }));
 
- const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme) => ({
   
     // Styling material components
     root: {
@@ -49,9 +49,9 @@ const DrawerHeader = styled("div")(({ theme }) => ({
         pageBackground: "#282c36",
         titleColor: "lightpink",
         tagLineColor: "lavender"
-      }  */
+      } */
 
-  })); 
+  }));
 
 
 const Content = (
@@ -62,25 +62,24 @@ const Content = (
         settoggleDark(!toggleDark);
         console.log(toggleDark)
       };
-      const classes = useStyles(); 
-      
+      const classes = useStyles();
 
 
     return (
-        <div className={classes} /*  id="contenedor" */  >
+        <div className={classes.root}  /* "contenedor" */  >
             {/* <DrawerHeader /> */}
             <div className="events">
                 <Typography paragraph variant="h4" className="Title-landing h4">
                     Próximos eventos
                 </Typography>
                 <img src={vinedo} alt="icon" />
-                {/* 
+                
                 <Switch
                             checked={toggleDark}
                             onChange={handleModeChange}
                             name="toggleDark"
                             color="default"
-                        /> */}
+                        />
 
 
                 <div className="event-info">

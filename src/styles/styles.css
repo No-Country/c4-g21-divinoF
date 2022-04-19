@@ -51,8 +51,8 @@ input {
 }
 .drawer{
     display: flex;
-    background-color: #fff ;
-    color:black ;
+    background-color: #fff !important;
+    color:black !important;
     justify-content: space-between !important;
 }
 
@@ -63,19 +63,19 @@ input {
 
 }
 
-div#contenedor{
+div.contenedor{
     margin-top:10vh ;
     padding: 0;
     
     
 }
 
-div#contenedor div:nth-child(even) {
+div.contenedor div:nth-child(even) {
      background: rgba(158, 163, 169, 0.33) !important; 
      
      margin: 0  ;
 }
-div#contenedor div:nth-child(odd) {
+div.contenedor div:nth-child(odd) {
     background: #fff !important; 
    
 }

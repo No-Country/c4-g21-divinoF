@@ -24,13 +24,10 @@ const App = () => {
       },
     });
 
-    
-
     return (
     <ThemeProvider theme={myTheme}>
         <div className="App">
-            <PersistentDrawerLeft toggleDark={toggleDark}
-        settoggleDark={settoggleDark} />
+            <PersistentDrawerLeft />
             <Routes>
                 <Route path="/" element={<Content toggleDark={toggleDark}
         settoggleDark={settoggleDark} />} />

@@ -29,16 +29,11 @@ import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import LoginIcon from '@mui/icons-material/Login';
 import { Link } from "react-router-dom";
 
-
-import Switch from "@material-ui/core/Switch";
-import { makeStyles } from "@material-ui/core/styles";
-
 const drawerWidth = 240;
 
 const AppBar = styled(MuiAppBar, {
     shouldForwardProp: (prop) => prop !== "open",
 })(({ theme, open }) => ({
-    
     transition: theme.transitions.create(["margin", "width"], {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
@@ -50,7 +45,6 @@ const AppBar = styled(MuiAppBar, {
             easing: theme.transitions.easing.easeOut,
             duration: theme.transitions.duration.enteringScreen,
         }),
-        
     }),
 }));
 const DrawerHeader = styled("div")(({ theme }) => ({
@@ -60,34 +54,9 @@ const DrawerHeader = styled("div")(({ theme }) => ({
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     justifyContent: "flex-end",
-    
 }));
 
-const useStyles = makeStyles((theme) => ({
-  
-    // Styling material components
-    root: {
-     
-        backgroundColor: theme.palette.background.default,
-        [theme.breakpoints.down("xs")]: {
-          paddingTop: theme.spacing(2),
-        },
-      },
-  
-    /* LightTheme : {
-        pageBackground: "white",
-        titleColor: "#dc658b",
-        tagLineColor: "black"
-      },
-    DarkTheme : {
-        pageBackground: "#282c36",
-        titleColor: "lightpink",
-        tagLineColor: "lavender"
-      } */
-
-  }));
-
-export default function PersistentDrawerLeft( {  toggleDark, settoggleDark } ) {
+export default function PersistentDrawerLeft() {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
@@ -99,17 +68,10 @@ export default function PersistentDrawerLeft( {  toggleDark, settoggleDark } ) {
         setOpen(false);
     };
 
-    const handleModeChange = () => {
-        settoggleDark(!toggleDark);
-        console.log(toggleDark)
-      };
-      const classes = useStyles();
-
-
     return (
-        <Box  sx={{ display: "flex" }}>
+        <Box sx={{ display: "flex" }}>
             <CssBaseline />
-            <AppBar id="drawer" className={classes.root} position="fixed" open={open}>
+            <AppBar className="drawer" position="fixed" open={open}>
                 <Toolbar className="DrawerStyles">
                     <IconButton
                         color="inherit"
@@ -136,9 +98,8 @@ export default function PersistentDrawerLeft( {  toggleDark, settoggleDark } ) {
                 </Toolbar>
                 
             </AppBar>
-            <Drawer className={classes.root}
+            <Drawer
                 sx={{
-                    
                     width: drawerWidth,
                     flexShrink: 0,
                     "& .MuiDrawer-paper": {
@@ -150,7 +111,7 @@ export default function PersistentDrawerLeft( {  toggleDark, settoggleDark } ) {
                 anchor="left"
                 open={open}
             >
-                <DrawerHeader className={classes.root}>
+                <DrawerHeader>
                     <IconButton onClick={handleDrawerClose}>
                         {theme.direction === "ltr" ? (
                             <ChevronLeftIcon />
@@ -160,7 +121,7 @@ export default function PersistentDrawerLeft( {  toggleDark, settoggleDark } ) {
                     </IconButton>
                 </DrawerHeader>
                 <Divider />
-                <List className={classes.root}>
+                <List>
                     {[
                         { name: "Dasboard", icon: <HomeIcon /> },
                         { name: "Revenue", icon: <BarChartIcon /> },
@@ -178,7 +139,7 @@ export default function PersistentDrawerLeft( {  toggleDark, settoggleDark } ) {
                     ))}
                 </List>
                 <Divider />
-                <List  className={classes.root}  >
+                <List>
                     {["Logout", "Darkmode"].map((text, index) => (
                         <ListItem button key={text}>
                             <ListItemIcon>
@@ -187,16 +148,8 @@ export default function PersistentDrawerLeft( {  toggleDark, settoggleDark } ) {
                             <ListItemText primary={text} />
                         </ListItem>
                     ))}
-
-                    
-
                 </List>
-                     <Switch
-                            checked={toggleDark}
-                            onChange={handleModeChange}
-                            name="toggleDark"
-                            color="default"
-                        />
+                     
 
             </Drawer>
         </Box>
