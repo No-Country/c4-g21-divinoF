@@ -29,11 +29,16 @@ import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import LoginIcon from '@mui/icons-material/Login';
 import { Link } from "react-router-dom";
 
+
+import Switch from "@material-ui/core/Switch";
+import { makeStyles } from "@material-ui/core/styles";
+
 const drawerWidth = 240;
 
 const AppBar = styled(MuiAppBar, {
     shouldForwardProp: (prop) => prop !== "open",
 })(({ theme, open }) => ({
+    
     transition: theme.transitions.create(["margin", "width"], {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
@@ -45,6 +50,7 @@ const AppBar = styled(MuiAppBar, {
             easing: theme.transitions.easing.easeOut,
             duration: theme.transitions.duration.enteringScreen,
         }),
+        
     }),
 }));
 const DrawerHeader = styled("div")(({ theme }) => ({
@@ -54,9 +60,34 @@ const DrawerHeader = styled("div")(({ theme }) => ({
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     justifyContent: "flex-end",
+    
 }));
 
-export default function PersistentDrawerLeft() {
+const useStyles = makeStyles((theme) => ({
+  
+    // Styling material components
+    root: {
+     
+        backgroundColor: theme.palette.background.default,
+        [theme.breakpoints.down("xs")]: {
+          paddingTop: theme.spacing(2),
+        },
+      },
+  
+    /* LightTheme : {
+        pageBackground: "white",
+        titleColor: "#dc658b",
+        tagLineColor: "black"
+      },
+    DarkTheme : {
+        pageBackground: "#282c36",
+        titleColor: "lightpink",
+        tagLineColor: "lavender"
+      } */
+
+  }));
+
+export default function PersistentDrawerLeft( {  toggleDark, settoggleDark } ) {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
@@ -68,10 +99,17 @@ export default function PersistentDrawerLeft() {
         setOpen(false);
     };
 
+    const handleModeChange = () => {
+        settoggleDark(!toggleDark);
+        console.log(toggleDark)
+      };
+      const classes = useStyles();
+
+
     return (
-        <Box sx={{ display: "flex" }}>
+        <Box  sx={{ display: "flex" }}>
             <CssBaseline />
-            <AppBar className="drawer" position="fixed" open={open}>
+            <AppBar id="drawer" className={classes.root} position="fixed" open={open}>
                 <Toolbar className="DrawerStyles">
                     <IconButton
                         color="inherit"
@@ -98,8 +136,9 @@ export default function PersistentDrawerLeft() {
                 </Toolbar>
                 
             </AppBar>
-            <Drawer
+            <Drawer className={classes.root}
                 sx={{
+                    
                     width: drawerWidth,
                     flexShrink: 0,
                     "& .MuiDrawer-paper": {
@@ -111,7 +150,7 @@ export default function PersistentDrawerLeft() {
                 anchor="left"
                 open={open}
             >
-                <DrawerHeader>
+                <DrawerHeader className={classes.root}>
                     <IconButton onClick={handleDrawerClose}>
                         {theme.direction === "ltr" ? (
                             <ChevronLeftIcon />
@@ -121,7 +160,7 @@ export default function PersistentDrawerLeft() {
                     </IconButton>
                 </DrawerHeader>
                 <Divider />
-                <List>
+                <List className={classes.root}>
                     {[
                         { name: "Dasboard", icon: <HomeIcon /> },
                         { name: "Revenue", icon: <BarChartIcon /> },
@@ -139,7 +178,7 @@ export default function PersistentDrawerLeft() {
                     ))}
                 </List>
                 <Divider />
-                <List>
+                <List  className={classes.root}  >
                     {["Logout", "Darkmode"].map((text, index) => (
                         <ListItem button key={text}>
                             <ListItemIcon>
@@ -148,8 +187,16 @@ export default function PersistentDrawerLeft() {
                             <ListItemText primary={text} />
                         </ListItem>
                     ))}
+
+                    
+
                 </List>
-                     
+                     <Switch
+                            checked={toggleDark}
+                            onChange={handleModeChange}
+                            name="toggleDark"
+                            color="default"
+                        />
 
             </Drawer>
         </Box>
