@@ -9,7 +9,6 @@ import { useState } from "react";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 
 
-
 const App = () => {
 
     const [toggleDark, settoggleDark] = useState(false);
@@ -21,19 +20,20 @@ const App = () => {
                     },
              });
     
-
+    
   
     return (
     <ThemeProvider theme={myTheme}>
       
     
-        <div className="App">
+        <div className={"App" }>
             <PersistentDrawerLeft 
 
             toggleDark={toggleDark} 
             settoggleDark={settoggleDark} />
             <Routes>
-                <Route path="/" element={<Content 
+                <Route path="/" element={<Content toggleDark={toggleDark} 
+            settoggleDark={settoggleDark}
                         
                        />} />
                 <Route path="/login" element={<Login />} />
