@@ -1,10 +1,36 @@
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  
+    // Styling material components
+    root: {
+    color: theme.palette.text.primary,
+      backgroundColor: theme.palette.background.default,
+      [theme.breakpoints.down("xs")]: {
+        paddingTop: theme.spacing(2),
+      },
+    },
+    stylesImg: {
+        color: theme.palette.text.primary,
+          backgroundColor: theme.palette.background.paper,
+          [theme.breakpoints.down("xs")]: {
+            paddingTop: theme.spacing(2),
+          },
+        }
+   
+  }));
+
+
 const Login = () => {
     const signIn = () => {
         alert("Te damos la bienvenida a Di-Vino");
     };
+
+    const classes = useStyles();
+
     return (
         <div
-            className="div-bg"
+            className={"div-bg"}
             style={{
                 backgroundImage: `url(https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80)`,
             }}

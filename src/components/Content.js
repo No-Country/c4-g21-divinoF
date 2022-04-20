@@ -11,22 +11,41 @@ import IconPatrocinio9 from "../assets/image-9.png";
 import IconPatrocinio10 from "../assets/image-10.png";
 import IconPatrocinio11 from "../assets/image-11.png";
 import Typography from "@mui/material/Typography";
-import { styled, useTheme } from "@mui/material/styles";
+/* import { styled } from "@mui/material/styles"; */
 
-const drawerWidth = 240;
+import { makeStyles } from "@material-ui/core/styles";
 
-const DrawerHeader = styled("div")(({ theme }) => ({
-    display: "flex",
-    alignItems: "center",
-    padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
-    ...theme.mixins.toolbar,
-    justifyContent: "flex-end",
-}));
+const useStyles = makeStyles((theme) => ({
+  
+    // Styling material components
+    root: {
+    color: theme.palette.text.primary,
+      backgroundColor: theme.palette.background.default,
+      [theme.breakpoints.down("xs")]: {
+        paddingTop: theme.spacing(2),
+      },
+    },
+    stylesImg: {
+        color: theme.palette.text.primary,
+          backgroundColor: !theme.palette.background.paper,
+          [theme.breakpoints.down("xs")]: {
+            paddingTop: theme.spacing(2),
+          },
+        }
+   
+  }));
 
-const Content = () => {
+
+
+const Content = (
+    {  toggleDark, settoggleDark }
+) => {
+    const classes = useStyles();
+    console.log(classes.root)
     return (
-        <div className="contenedor">
+        <div /* className="contenedor" */ className={ 
+           
+            toggleDark ? " contenedor2 "+classes.root    : "contenedor"}>
             {/* <DrawerHeader /> */}
             <div className="events">
                 <Typography paragraph variant="h4" className="Title-landing h4">
@@ -96,12 +115,12 @@ const Content = () => {
                 <Typography variant="h4" className="Title-landing">
                     Bodegas partner
                 </Typography>
-                <img src={IconPatrocinio1} alt="icon" />
+                <img src={IconPatrocinio1} alt="icon"  />
                 <img src={IconPatrocinio2} alt="icon" />
                 <img src={IconPatrocinio3} alt="icon" />
                 <img src={IconPatrocinio4} alt="icon" />
 
-                <img src={IconPatrocinio9} alt="icon" />
+                <img src={IconPatrocinio9} alt="icon"  />
                 <img src={IconPatrocinio10} alt="icon" />
                 <img src={IconPatrocinio11} alt="icon" />
             </div>

@@ -66,17 +66,21 @@ input {
 div.contenedor{
     margin-top:10vh ;
     padding: 0;
-    
-    
+     
+}
+div.contenedor2{
+    margin-top:5vh ;
+    padding: 0;
+     
 }
 
 div.contenedor div:nth-child(even) {
-     background: rgba(158, 163, 169, 0.33) !important; 
+     background: rgba(158, 163, 169, 0.33) ; 
      
      margin: 0  ;
 }
 div.contenedor div:nth-child(odd) {
-    background: #fff !important; 
+    background: #fff ; 
    
 }
 
