@@ -29,6 +29,12 @@ import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import LoginIcon from '@mui/icons-material/Login';
 import { Link } from "react-router-dom";
 
+import Switch from "@material-ui/core/Switch"
+
+import { makeStyles } from "@material-ui/core/styles";
+import { unstable_ClassNameGenerator } from "@mui/material";
+import { withThemeCreator } from "@material-ui/styles";
+
 const drawerWidth = 240;
 
 const AppBar = styled(MuiAppBar, {
@@ -56,7 +62,26 @@ const DrawerHeader = styled("div")(({ theme }) => ({
     justifyContent: "flex-end",
 }));
 
-export default function PersistentDrawerLeft() {
+
+const useStyles = makeStyles((theme) => ({
+  
+    // Styling material components
+    root: {
+      color: theme.palette.text.primary,
+      backgroundColor: theme.palette.background.default,
+      [theme.breakpoints.down("xs")]: {
+        paddingTop: theme.spacing(2),
+      },
+    }
+   
+  }));
+
+
+
+export default function PersistentDrawerLeft(
+
+    {  toggleDark, settoggleDark }
+) {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
@@ -67,11 +92,16 @@ export default function PersistentDrawerLeft() {
     const handleDrawerClose = () => {
         setOpen(false);
     };
+    const handleModeChange = () => {
+        settoggleDark(!toggleDark);
+        console.log(toggleDark)
+        };
+    const classes = useStyles();
 
     return (
-        <Box sx={{ display: "flex" }}>
+        <Box sx={{ display: "flex" }} >
             <CssBaseline />
-            <AppBar className="drawer" position="fixed" open={open}>
+            <AppBar   className={"drawer"  }  position="fixed" open={open}>
                 <Toolbar className="DrawerStyles">
                     <IconButton
                         color="inherit"
@@ -110,8 +140,9 @@ export default function PersistentDrawerLeft() {
                 variant="persistent"
                 anchor="left"
                 open={open}
+                
             >
-                <DrawerHeader>
+                <DrawerHeader className={classes.root}>
                     <IconButton onClick={handleDrawerClose}>
                         {theme.direction === "ltr" ? (
                             <ChevronLeftIcon />
@@ -121,7 +152,7 @@ export default function PersistentDrawerLeft() {
                     </IconButton>
                 </DrawerHeader>
                 <Divider />
-                <List>
+                <List className={classes.root}>
                     {[
                         { name: "Dasboard", icon: <HomeIcon /> },
                         { name: "Revenue", icon: <BarChartIcon /> },
@@ -139,7 +170,7 @@ export default function PersistentDrawerLeft() {
                     ))}
                 </List>
                 <Divider />
-                <List>
+                <List className={classes.root}>
                     {["Logout", "Darkmode"].map((text, index) => (
                         <ListItem button key={text}>
                             <ListItemIcon>
@@ -149,6 +180,13 @@ export default function PersistentDrawerLeft() {
                         </ListItem>
                     ))}
                 </List>
+                
+                <Switch
+                        checked={toggleDark}
+                        onChange={handleModeChange}
+                        name="toggleDark"
+                        color="default"
+                />
                      
 
             </Drawer>

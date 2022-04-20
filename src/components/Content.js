@@ -13,6 +13,29 @@ import IconPatrocinio11 from "../assets/image-11.png";
 import Typography from "@mui/material/Typography";
 import { styled, useTheme } from "@mui/material/styles";
 
+import PersistentDrawerLeft from "./PersistentDrawerLeft";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  
+    // Styling material components
+    root: {
+    color: theme.palette.text.primary,
+      backgroundColor: theme.palette.background.default,
+      [theme.breakpoints.down("xs")]: {
+        paddingTop: theme.spacing(2),
+      },
+    },
+    stylesImg: {
+        color: theme.palette.text.primary,
+          backgroundColor: theme.palette.background.paper,
+          [theme.breakpoints.down("xs")]: {
+            paddingTop: theme.spacing(2),
+          },
+        }
+   
+  }));
+
 const drawerWidth = 240;
 
 const DrawerHeader = styled("div")(({ theme }) => ({
@@ -24,9 +47,12 @@ const DrawerHeader = styled("div")(({ theme }) => ({
     justifyContent: "flex-end",
 }));
 
-const Content = () => {
+const Content = (
+    
+) => {
+    const classes = useStyles();
     return (
-        <div className="contenedor">
+        <div /* className="contenedor" */ className={classes.root}>
             {/* <DrawerHeader /> */}
             <div className="events">
                 <Typography paragraph variant="h4" className="Title-landing h4">
@@ -96,12 +122,12 @@ const Content = () => {
                 <Typography variant="h4" className="Title-landing">
                     Bodegas partner
                 </Typography>
-                <img src={IconPatrocinio1} alt="icon" />
+                <img src={IconPatrocinio1} alt="icon"  />
                 <img src={IconPatrocinio2} alt="icon" />
                 <img src={IconPatrocinio3} alt="icon" />
                 <img src={IconPatrocinio4} alt="icon" />
 
-                <img src={IconPatrocinio9} alt="icon" />
+                <img src={IconPatrocinio9} alt="icon"  />
                 <img src={IconPatrocinio10} alt="icon" />
                 <img src={IconPatrocinio11} alt="icon" />
             </div>
