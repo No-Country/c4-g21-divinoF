@@ -7,9 +7,10 @@ import PersistentDrawerLeft from "./components/PersistentDrawerLeft";
 
 import { useState } from "react";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
-import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
+import { withAuthenticator } from '@aws-amplify/ui-react'
+import '@aws-amplify/ui-react/styles.css'
 
-const App = () => {
+const App = ({ signOut }) => {
 
     const [toggleDark, settoggleDark] = useState(false);
     const myTheme = createTheme({
@@ -27,10 +28,10 @@ const App = () => {
       
     
     <div className={"App" }>
-              {/*   <header>
+           {/*  <header>
             
                 <h1>We now have Auth!</h1>
-                </header>
+            </header>
             <AmplifySignOut /> */}
             
             <PersistentDrawerLeft 
@@ -45,10 +46,14 @@ const App = () => {
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
             </Routes>
+            <div>
+             
+                <button onClick={signOut}>Sign out</button>
+            </div>
         </div>
     
     </ThemeProvider>
     );
 };
 
-export default withAuthenticator(App);
+export default  withAuthenticator(App); 

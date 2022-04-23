@@ -1,34 +1,19 @@
-import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles((theme) => ({
-  
-    // Styling material components
-    root: {
-    color: theme.palette.text.primary,
-      backgroundColor: theme.palette.background.default,
-      [theme.breakpoints.down("xs")]: {
-        paddingTop: theme.spacing(2),
-      },
-    },
-    stylesImg: {
-        color: theme.palette.text.primary,
-          backgroundColor: theme.palette.background.paper,
-          [theme.breakpoints.down("xs")]: {
-            paddingTop: theme.spacing(2),
-          },
-        }
-   
-  }));
+/* import '@aws-amplify/ui-react/styles.css'
+import { AmplifyProvider } from '@aws-amplify/ui-react' */
+/* import { withAuthenticator } from '@aws-amplify/ui-react' */
 
 
-const Login = () => {
+
+
+const Login = ({signOut}) => {
     const signIn = () => {
         alert("Te damos la bienvenida a Di-Vino");
     };
 
-    const classes = useStyles();
+    
 
     return (
+        /* <AmplifyProvider> */
         <div
             className={"div-bg"}
             style={{
@@ -54,9 +39,13 @@ const Login = () => {
                 <button className="btn btn-primary" onClick={signIn}>
                     Sign in
                 </button>
+                
             </div>
-        </div>
+             
+        </div> 
+        /* </AmplifyProvider> */
+        
     );
 };
 
-export default Login;
+export default Login /* withAuthenticator(Login) */;
