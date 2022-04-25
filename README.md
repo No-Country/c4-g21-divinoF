@@ -1,3 +1,32 @@
+# Divino
+
+Es una app que permite integrar a los consumidores de vino y a sus productores a través de eventos de maridaje en la zona para agrandar nuestro círculo social y compartir  experiencias con otras personas con más trayectoria.
+
+# Tech Stack 
+## Frontend: 
+1. HTML 5 
+2. CSS 3, Material UI and Boostrap
+3. JavaScript ES6 + React 
+4. NodeJS
+
+## Backend 
+1. NodeJs + Express 
+2. MongoDB
+
+## CI/CD 
+1.Aws amplify
+2. link to deploy : https://master.dnctavit1s68f.amplifyapp.com/
+
+## Project management 
+1. Scrum as agile methodology
+2. Trello for project management
+3. Git and GitHub for version control
+
+# Contributors:
+1. Fabian Tureo: FullStack developer
+2. Camila Jorquera: Fronted and designer 
+3. Esneider Barrera: Fronted developer-infractruture AWS 
+4. Ingrid Inga- Team Leader 
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
